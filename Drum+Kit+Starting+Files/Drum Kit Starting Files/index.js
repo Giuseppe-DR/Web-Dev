@@ -1,12 +1,17 @@
 for (var i = 0; i < document.querySelectorAll(".drum").length; i++){
-    document.querySelectorAll('.drum')[i].addEventListener("click", handleClick);
+    document.querySelectorAll('.drum')[i].addEventListener("click", function(){
+        var buttonInnerHTML = this.innerHTML;
+
+        makeSound(buttonInnerHTML);
+    });
 }
 
+document.addEventListener("keypress", function(event){
+    makeSound(event.key);
+});
 
-
-function handleClick() {
-    var triggerEvent = this.innerHTML;
-    switch (this.innerHTML) {
+function makeSound(key){
+    switch (key) {
         case "w":
             var tom1 = new Audio("sounds/tom-1.mp3");
             tom1.play();
