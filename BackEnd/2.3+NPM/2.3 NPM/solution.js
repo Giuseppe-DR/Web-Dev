@@ -1,5 +1,5 @@
 // var generateName = require("sillyname");
-import generateName from "sillyName";
+i/* mport generateName from "sillyName"; */
 
 var sillyName = generateName();
 
