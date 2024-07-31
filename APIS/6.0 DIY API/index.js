@@ -16,7 +16,7 @@ app.get("/random", (req, res) => {
 app.get("/jokes/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const foundJoke = jokes.find((joke) => joke.id === id);
-  res.json(jokes[randomIndex]);
+  res.json(jokes[foundJoke]);
 });
 //3. GET a jokes by filtering on the joke type
 app.get("/filter", (req, res) => {
